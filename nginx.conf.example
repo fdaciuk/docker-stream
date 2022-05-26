@@ -1,0 +1,23 @@
+worker_processes auto;
+rtmp_auto_push on;
+events {}
+rtmp {
+  server {
+    listen 1935;
+    listen [::]:1935 ipv6only=on;
+
+    application live {
+      live on;
+      record off;
+
+      # Twitch (TEST)
+      # push rtmp://live-rio.twitch.tv/app/SUA_CHAVE_AQUI?bandwidthtest=true;
+
+      # Twitch
+      push rtmp://live-rio.twitch.tv/app/SUA_CHAVE_AQUI;
+
+      # Youtube
+      push rtmp://a.rtmp.youtube.com/live2/SUA_CHAVE_AQUI;
+    }
+  }
+}
