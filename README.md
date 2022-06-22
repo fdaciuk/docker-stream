@@ -26,7 +26,7 @@ rtmp://a.rtmp.youtube.com/live2
 3. Crie o container com o comando:
 
 ```console
-docker run -d -p 1935:1935 --name stream --mount type=bind,source=$(pwd)/nginx.conf,target=/etc/nginx/nginx.conf tiangolo/nginx-rtmp
+docker run -d -p 1935:1935 --name stream --restart always --mount type=bind,source=$(pwd)/nginx.conf,target=/etc/nginx/nginx.conf tiangolo/nginx-rtmp
 ```
 
 (se já estava criado, só subir com `docker start stream`)
