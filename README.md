@@ -1,6 +1,6 @@
 # Docker Stream
 
-Como streamar para mais de uma plataforma ao mesmo tempo usando Docker e Nginx
+Como fazer livestream para mais de uma plataforma ao mesmo tempo usando Docker e nginx
 
 Tutorial:
 https://www.youtube.com/watch?v=EzmA8uksOG4
@@ -10,12 +10,12 @@ https://obsproject.com/forum/resources/obs-studio-stream-to-multiple-platforms-o
 Lista de servidores:
 https://github.com/obsproject/obs-studio/blob/master/plugins/rtmp-services/data/services.json
 
-Servidor Twitch:
-São Paulo: rtmp://live-sao.twitch.tv/app
-Rio de Janeiro: rtmp://live-rio.twitch.tv/app
+**Servidor Twitch:**
+- São Paulo: rtmp://live-sao.twitch.tv/app
+- Rio de Janeiro: rtmp://live-rio.twitch.tv/app
 
-Servidor Youtube:
-rtmp://a.rtmp.youtube.com/live2
+**Servidor Youtube:**
+- rtmp://a.rtmp.youtube.com/live2
 
 ## Como configurar 
 
@@ -31,14 +31,14 @@ docker run -d -p 1935:1935 --name stream --restart always --mount type=bind,sour
 
 (se já estava criado, só subir com `docker start stream`)
 
-4. Atualize os pacotes: 
+4. Atualize os pacotes dentro do container: 
 
 ```console
 docker exec stream apt update && docker exec stream apt upgrade -y
 ```
 
 5. Na Twitch, se vc quiser testar a conexão antes entrar live, pode usar uma query string depois da key: `?bandwidthtest=true`
-Link para testar a Twitch: https://inspector.twitch.tv/#/fdaciuk/
+Link para testar a Twitch: https://inspector.twitch.tv/#/SEU_USUARIO_DA_TWITCH/
 
 6. Salve o arquivo e saia. Digite `docker exec stream nginx -t` pra testar as configurações.
 
