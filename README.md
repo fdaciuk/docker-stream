@@ -38,7 +38,11 @@ docker exec stream apt update && docker exec stream apt upgrade -y
 ```
 
 5. Na Twitch, se vc quiser testar a conexão antes entrar live, pode usar uma query string depois da key: `?bandwidthtest=true`
-Link para testar a Twitch: https://inspector.twitch.tv/#/SEU_USUARIO_DA_TWITCH/
+Link para testar a Twitch: 
+
+```
+https://inspector.twitch.tv/#/SEU_USUARIO_DA_TWITCH/
+```
 
 6. Salve o arquivo e saia. Digite `docker exec stream nginx -t` pra testar as configurações.
 
